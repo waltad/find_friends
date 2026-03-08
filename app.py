@@ -12,8 +12,7 @@ CLUSTER_NAMES_AND_DESCRIPTIONS = 'welcome_survey_cluster_names_and_descriptions_
 
 @st.cache_data
 def get_model():
-    model = load_model(MODEL_NAME)
-    return model
+    return load_model(MODEL_NAME)
 
 @st.cache_data
 def get_cluster_names_and_descriptions():
@@ -61,41 +60,42 @@ same_cluster_df = all_df[all_df['Cluster'] == predict_cluster_id]
 st.metric(label="Liczba twoich znajomych", value=len(same_cluster_df))
 
 st.header("Osoby z grupy")
-fig = px.histogram(same_cluster_df.sort_values(by='age'), x='age')
+fig = px.histogram(same_cluster_df.sort_values(by='age'), x='age', color='age')
 fig.update_layout(
     title="Rozkład wieku w grupie",
     xaxis_title="Wiek",
     yaxis_title="Liczba osób",
-    legend_title="Płeć")
-st.plotly_chart(fig, use_container_width=True)
+)
+st.plotly_chart(fig)
 
-fig = px.histogram(same_cluster_df, x='edu_level')
+fig = px.histogram(same_cluster_df, x='edu_level', color='edu_level')
 fig.update_layout(
     title="Rozkład wykształacenia w grupie",
     xaxis_title="Wykształcenie",
     yaxis_title="Liczba osób",
-    legend_title="Płeć")
-st.plotly_chart(fig, use_container_width=True)
+)
+st.plotly_chart(fig)
 
-fig = px.histogram(same_cluster_df, x='fav_animals')
+fig = px.histogram(same_cluster_df, x='fav_animals', color='fav_animals')
 fig.update_layout(
     title="Rozkład ulubionych zwierząt w grupie",
     xaxis_title="Ulubione zwierzęta",
     yaxis_title="Liczba osób",
-    legend_title="Płeć")
-st.plotly_chart(fig, use_container_width=True)
+)
+st.plotly_chart(fig)
 
-fig = px.histogram(same_cluster_df, x='fav_place')
+fig = px.histogram(same_cluster_df, x='fav_place', color='fav_place')
 fig.update_layout(
     title="Rozkład ulubionych miejsc w grupie",
     xaxis_title="Ulubione miejsce",
     yaxis_title="Liczba osób",
-    legend_title="Płeć")
-st.plotly_chart(fig, use_container_width=True)
+)
+st.plotly_chart(fig)
 
 fig = px.histogram(same_cluster_df, x='gender', color='gender')
 fig.update_layout(
     title="Rozkład płci w grupie",
     xaxis_title="Płeć",
-    yaxis_title="Liczba osób")
-st.plotly_chart(fig, use_container_width=True)
+    yaxis_title="Liczba osób"
+)
+st.plotly_chart(fig)
