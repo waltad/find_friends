@@ -1,4 +1,30 @@
-streamlit
-pandas
-plotly
-pycaret[full]
+# Core
+streamlit==1.54.0
+pandas==3.0.1
+numpy==1.26.4
+
+# ML
+pycaret==3.3.2
+scikit-learn==1.4.2
+lightgbm==4.6.0
+imbalanced-learn==0.13.0
+scikit-plot==0.3.7
+yellowbrick==1.5
+sktime==0.26.0
+statsmodels==0.14.6
+scipy==1.11.4
+numba==0.61.2
+pmdarima==2.0.4
+
+# Visualization
+plotly==6.3.0
+matplotlib==3.10.8
+altair==6.0.0
+
+# Data
+pyarrow==23.0.1
+
+# Utils
+joblib==1.2.0
+tqdm==4.67.3
+category_encoders==2.6.3
